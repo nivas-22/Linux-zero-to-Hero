@@ -1,0 +1,36 @@
+DAY 1: Introduction to Linux
+
+Understanding Linux Operating System
+
+
+# What is Linux?
+
+Linux is a **free, open-source operating system** based on **Unix**. It’s used everywhere:
+
+- **96% of web servers** run Linux  
+- **Android** is based on Linux  
+- **All major cloud platforms** use Linux  
+- **Docker containers** run on Linux  
+
+---
+
+# Linux vs Windows
+
+| Feature | Linux | Windows |
+|---|---|---|
+| Licensing | Free & Open Source | Paid & Proprietary |
+| Interface | Command-line focused | GUI focused |
+| File System | Case-sensitive (`File ≠ file`) | Case-insensitive |
+| Path Separator | Uses `/` for paths | Uses `\` for paths |
+| Drives | No drive letters (`C:`, `D:`) | Uses drive letters |
+| Software Installation | Package managers (`apt`, `yum`) | Installers (`.exe`, `.msi`) |
+
+---
+
+# Popular Linux Distributions
+
+- **Ubuntu** – Best for beginners, desktop use  
+- **CentOS / RHEL** – Enterprise servers  
+- **Debian** – Stable and reliable  
+- **Amazon Linux** – Optimized for AWS  
+- **Alpine Linux** – Lightweight, commonly used for Docker containers
