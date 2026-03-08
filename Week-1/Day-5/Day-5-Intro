@@ -1,0 +1,165 @@
+DAY 5: File Viewing Commands
+
+Reading and Viewing File Contents
+
+## Commands
+
+1. cat – Concatenate and Display Files
+2. tac – Display File in Reverse (last line first)
+3. more – View File One Screen at a Time
+4. less – Better File Viewer (more features than more)
+5. head – Display First Lines of File
+6. tail – Display Last Lines of File
+
+
+
+## Workouts
+
+# Display file contents
+$ cat file. txt
+Hello World
+This is line 2
+This is line 3
+
+# Display with line numbers
+$ cat -n file. txt
+1 Hello World
+2 This is line 2
+3 This is line 3
+
+# Number non - blank lines only
+$ cat -b file. txt
+# Concatenate multiple files
+$ cat file1 . txt file2 . txt > combined. txt
+
+# Create a file with cat
+$ cat > newfile . txt
+Type your content here
+Press Ctrl + D to save
+^ D
+
+# Append to file
+$ cat >> file . txt
+This line is appended
+^ D
+
+# Show end of lines and tabs
+$ cat -A file. txt
+Hello World$
+This has a ^ Itab$
+
+# Squeeze blank lines
+$ cat -s file_with_blanks . txt
+
+-----------------------------------------------------------------------------------
+$ cat file. txt
+Line 1
+Line 2
+Line 3
+$ tac file. txt
+Line 3
+Line 2
+Line 1
+# Useful for viewing logs ( newest first )
+$ tac / var / log / syslog | head -20
+
+-----------------------------------------------------------------------------------
+
+$ more / var/log / syslog
+# Start at line 100
+$ more +100 largefile. txt
+# Display 20 lines per screen
+$ more -20 file. txt
+# Navigation :
+# Space -> Next page
+# Enter -> Next line
+# b -> Previous page
+# q -> Quit
+# / text -> Search for " text "
+
+----------------------------------------------------------------------------------- 
+
+# View file with less
+$ less / var/log / syslog
+# With line numbers
+$ less -N file. txt
+# Follow log file ( real - time updates )
+$ less + F / var/log / syslog
+# Press Ctrl + C to stop following, F to resume
+# Search within less :
+/ error # Search forward for " error "
+? warning # Search backwards for " warning "
+n # Next match
+N # Previous match
+# Navigation :
+g # Go to beginning
+G # Go to the end
+50 g # Go to line 50
+
+less is MORE!
+Less is the improved version of more:
+• Allows backward navigation
+• Better search capabilities
+• Doesn’t load the entire file into memory
+• Follow mode for log files
+
+-----------------------------------------------------------------------------------
+
+# Display first 10 lines ( default )
+$ head file. txt
+
+# Display first 5 lines
+$ head -n 5 file.txt
+$ head -5 file. txt
+
+# Display first 100 bytes
+$ head -c 100 file. txt
+
+# Display first lines of multiple files
+$ head file1 . txt file2 . txt
+== > file1 . txt <==
+( first 10 lines of file1 )
+== > file2 . txt <==
+( first 10 lines of file2 )
+
+# Quiet mode ( no headers )
+$ head -q file1. txt file2 . txt
+# Display all BUT last 5 lines
+$ head -n -5 file. txt
+
+-----------------------------------------------------------------------------------
+
+# Display last 10 lines ( default )
+$ tail file. txt
+
+# Display last 20 lines
+$ tail -n 20 file. txt
+$ tail -20 file. txt
+
+# Display last 50 bytes
+$ tail -c 50 file. txt
+
+# Follow log file in real - time ( VERY USEFUL !)
+$ tail -f / var/log / syslog
+
+# Press Ctrl + C to stop
+# Follow multiple files
+$ tail -f / var / log / syslog / var / log / auth.log
+
+# Follow with retry ( if log rotates )
+$ tail -F / var/log / syslog
+
+# Display starting from line 100
+$ tail -n +100 file. txt
+
+# Combine with grep for filtering
+$ tail -f / var/log / syslog | grep error
+
+tail -f is essential for DevOps!
+
+Monitor logs in real-time:
+$ tail -f / var/log / nginx / access.log
+$ tail -f / var/log / nginx / error.log
+$ tail -f / var/log / syslog | grep -i error
+
+
