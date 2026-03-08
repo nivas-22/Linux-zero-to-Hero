@@ -1,0 +1,30 @@
+Day 3 Practice Exercises
+  
+Exercise 1: Create a project structure
+$ mkdir - pv ~ / myproject / { src , bin , docs , tests , config }
+$ tree ~ / myproject
+  
+Exercise 2: Navigate using different methods
+$ cd ~ / myproject / src
+$ pwd
+$ cd ..
+$ pwd
+$ cd -
+$ pwd
+  
+Exercise 3: Create and remove empty directories
+$ mkdir -v temp1 temp2 temp3
+$ rmdir -v temp1 temp2 temp3
+  
+Exercise 4: Create nested directories and remove
+$ mkdir - pv a / b / c / d / e
+$ rmdir - pv a / b / c / d / e
+  
+Exercise 5: Check file/directory status
+$ stat / etc / passwd
+$ stat -c "% n : % a permissions , % U owner " / etc / passwd
+  
+Exercise 6: Create directories with specific permissions
+$ mkdir -m 755 public
+$ mkdir -m 700 private
+$ ls - ld public private
