@@ -1,0 +1,28 @@
+Hands-On Practice
+
+Day 2 Practice Exercises
+
+
+Exercise 1: List all files including hidden ones
+$ ls - la
+
+Exercise 2: List files with human-readable sizes
+$ ls - lh
+
+Exercise 3: List files sorted by modification time
+$ ls - lt
+
+Exercise 4: List files sorted by size (largest first)
+$ ls - lS
+
+Exercise 5: Explore system directories
+$ ls - la / etc
+$ ls - la / var / log
+$ ls - la / home
+
+Exercise 6: Show directory tree (2 levels)
+$ tree -L 2 / home
+
+Exercise 7: List only directories
+$ ls -d * /
+$ tree -d
