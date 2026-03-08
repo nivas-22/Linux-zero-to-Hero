@@ -1,0 +1,99 @@
+Linux File System Structure
+
+  Understanding the Linux Directory Hierarchy
+
+  Theory
+Linux File System Hierarchy
+Everything in Linux is a file – even devices and processes!
+/ (root)
+
+/home /etc /var /bin /usr /tmp /opt
+
+# Directory Purpose
+  
+/ Root directory – top of file system
+/home User home directories 
+/etc System configuration files
+/var Variable data (logs, mail, databases)
+/bin Essential user binaries (ls, cp, mv)
+/sbin System binaries (admin commands)
+/usr User programs and data
+/tmp Temporary files (cleared on reboot)
+/opt Optional/third-party software
+/dev Device files
+/proc Process information (virtual)
+/root Root user’s home directory
+
+---------------------------------------------------------------------------------------------------
+Absolute vs Relative Paths
+• Absolute path: Starts from / → /home/raman/documents
+• Relative path: From current location → ./documents or ../other
+  
+• . = Current directory
+• .. = Parent directory
+• ~ = Home directory
+----------------------------------------------------------------------------------------------------
+
+# Commands
+  
+  ls – List Directory Contents
+
+
+---------------------------------------------------------------------------------------------------------
+
+# ls - Flag Description
+  
+-l Long format (permissions, owner, size, date)
+-a Show all files (including hidden . files)
+-h Human-readable sizes (KB, MB, GB)
+-R Recursive – list subdirectories
+-t Sort by time (newest first)
+-r Reverse order
+-S Sort by size (largest first)
+-i Show inode numbers
+-d List directory itself, not contents
+-1 One file per line
+--color Colorize output
+
+
+
+-----------------------------------------------------------------------------------------------------------
+
+## Workouts 
+  
+$ ls
+Desktop Documents Downloads Music Pictures
+  
+$ ls -l
+drwxr - xr - x 2 raman raman 4096 Jan 15 10:00 Desktop
+drwxr - xr - x 3 raman raman 4096 Jan 14 09:30 Documents
+-rw -r - -r - - 1 raman raman 1024 Jan 13 15:20 file . txt
+  
+$ ls - la
+total 32
+drwxr - xr - x 5 raman raman 4096 Jan 15 10:00 .
+drwxr - xr - x 3 root root 4096 Jan 10 08:00 ..
+-rw - - - - - - - 1 raman raman 256 Jan 15 10:00 . bash_history
+-rw -r - -r - - 1 raman raman 220 Jan 10 08:00 . bashrc
+drwxr - xr - x 2 raman raman 4096 Jan 15 10:00 Desktop
+  
+$ ls - lh
+-rw -r - -r - - 1 raman raman 1.5 M Jan 15 10:00 large_file . txt
+-rw -r - -r - - 1 raman raman 256 K Jan 14 09:30 medium_file . txt
+  
+$ ls - lt
+# Lists files sorted by modification time ( newest first )
+  
+$ ls - lS
+# Lists files sorted by size ( largest first )
+  
+$ ls -R
+# Lists all subdirectories recursively
+  
+$ ls - la / etc
+# List all files in / etc directory
+  
+$ ls - ld / home
+# Show info about / home directory itself
+drwxr - xr - x 3 root root 4096 Jan 10 08:00 / home
+  
