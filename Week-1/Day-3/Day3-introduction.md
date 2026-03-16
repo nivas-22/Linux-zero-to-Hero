@@ -1,52 +1,60 @@
-# Day 3: Directory Operations
+# 🐧 Day 3: Directory Operations
 
-Creating, Navigating, and Managing Directories
+## 📂 Creating, Navigating, and Managing Directories
 
----
-
-# Commands
-
-1. `mkdir` – Make directories  
-2. `rmdir` – Remove empty directories  
-3. `cd` – Change directory  
-4. `stat` – Display file/directory status  
+In this lesson you will learn how to **create, navigate, inspect, and remove directories** using common Linux commands.
 
 ---
 
-# mkdir Flags
+# 📌 Commands Covered
 
-| Flag | Description |
-|---|---|
-| `-p` | Create parent directories as needed |
-| `-v` | Verbose – show message for each created directory |
-| `-m MODE` | Set permission mode |
-
----
-
-# cd Usage
-
-| Command | Description |
-|---|---|
-| `cd` | Go to home directory |
-| `cd ~` | Go to home directory |
-| `cd -` | Go to previous directory |
-| `cd ..` | Go to parent directory |
-| `cd ../..` | Go up two levels |
-| `cd /path` | Go to absolute path |
-| `cd ./dir` | Go to relative path |
+| Command | Purpose                               |
+| ------- | ------------------------------------- |
+| `mkdir` | Create directories                    |
+| `rmdir` | Remove empty directories              |
+| `cd`    | Change directory                      |
+| `stat`  | Display file or directory information |
 
 ---
 
-# mkdir Examples
+# 📁 `mkdir` Command
 
-## Create single directory
+The `mkdir` command is used to **create new directories**.
+
+## Common Flags
+
+| Flag      | Description                                    |
+| --------- | ---------------------------------------------- |
+| `-p`      | Create parent directories if they do not exist |
+| `-v`      | Verbose output (shows created directories)     |
+| `-m MODE` | Set directory permission mode                  |
+
+---
+
+# 📂 `cd` Command Usage
+
+| Command    | Description                  |
+| ---------- | ---------------------------- |
+| `cd`       | Go to home directory         |
+| `cd ~`     | Go to home directory         |
+| `cd -`     | Switch to previous directory |
+| `cd ..`    | Move to parent directory     |
+| `cd ../..` | Move up two directory levels |
+| `cd /path` | Navigate using absolute path |
+| `cd ./dir` | Navigate using relative path |
+
+---
+
+# 🛠 mkdir Examples
+
+## Create Single Directory
 
 ```bash
 mkdir projects
 ls
 ```
 
-Output
+Example output:
 
 ```
 projects
@@ -54,14 +62,14 @@ projects
 
 ---
 
-## Create multiple directories
+## Create Multiple Directories
 
 ```bash
 mkdir dir1 dir2 dir3
 ls
 ```
 
-Output
+Example output:
 
 ```
 dir1 dir2 dir3 projects
@@ -69,14 +77,14 @@ dir1 dir2 dir3 projects
 
 ---
 
-## Create nested directories
+## Create Nested Directories
 
 ```bash
 mkdir -p projects/webapp/src/main
 tree projects
 ```
 
-Example
+Example structure:
 
 ```
 projects
@@ -87,13 +95,13 @@ projects
 
 ---
 
-## Create with verbose output
+## Create Directories with Verbose Output
 
 ```bash
 mkdir -v test1 test2
 ```
 
-Output
+Example output:
 
 ```
 mkdir: created directory 'test1'
@@ -102,7 +110,7 @@ mkdir: created directory 'test2'
 
 ---
 
-## Create with specific permissions
+## Create Directories with Specific Permissions
 
 ```bash
 mkdir -m 755 public_folder
@@ -110,7 +118,7 @@ mkdir -m 700 private_folder
 ls -l
 ```
 
-Example
+Example output:
 
 ```
 drwxr-xr-x 2 raman raman 4096 Jan 15 10:00 public_folder
@@ -119,13 +127,13 @@ drwx------ 2 raman raman 4096 Jan 15 10:00 private_folder
 
 ---
 
-## Create complex directory structure
+## Create Complex Directory Structure
 
 ```bash
 mkdir -pv project/{src,bin,docs,tests}
 ```
 
-Output
+Example output:
 
 ```
 mkdir: created directory 'project'
@@ -137,9 +145,9 @@ mkdir: created directory 'project/tests'
 
 ---
 
-# rmdir Examples
+# 🗑 rmdir Examples
 
-## Remove empty directory
+## Remove an Empty Directory
 
 ```bash
 rmdir empty_folder
@@ -147,13 +155,13 @@ rmdir empty_folder
 
 ---
 
-## Remove with verbose output
+## Remove with Verbose Output
 
 ```bash
 rmdir -v test_dir
 ```
 
-Output
+Example output:
 
 ```
 rmdir: removing directory 'test_dir'
@@ -161,14 +169,14 @@ rmdir: removing directory 'test_dir'
 
 ---
 
-## Remove nested empty directories
+## Remove Nested Empty Directories
 
 ```bash
 mkdir -p a/b/c
 rmdir -pv a/b/c
 ```
 
-Output
+Example output:
 
 ```
 rmdir: removing directory 'a/b/c'
@@ -178,13 +186,13 @@ rmdir: removing directory 'a'
 
 ---
 
-## Error when directory not empty
+## Error When Directory Is Not Empty
 
 ```bash
 rmdir documents
 ```
 
-Output
+Example output:
 
 ```
 rmdir: failed to remove 'documents': Directory not empty
@@ -192,16 +200,16 @@ rmdir: failed to remove 'documents': Directory not empty
 
 ---
 
-# cd Examples
+# 🧭 cd Examples
 
-## Go to home directory
+## Go to Home Directory
 
 ```bash
 cd
 pwd
 ```
 
-Output
+Example output:
 
 ```
 /home/raman
@@ -209,14 +217,14 @@ Output
 
 ---
 
-## Go to home directory (alternative)
+## Alternative Home Directory Command
 
 ```bash
 cd ~
 pwd
 ```
 
-Output
+Example output:
 
 ```
 /home/raman
@@ -224,14 +232,14 @@ Output
 
 ---
 
-## Go to specific directory
+## Go to Specific Directory
 
 ```bash
 cd /var/log
 pwd
 ```
 
-Output
+Example output:
 
 ```
 /var/log
@@ -239,14 +247,14 @@ Output
 
 ---
 
-## Go to parent directory
+## Go to Parent Directory
 
 ```bash
 cd ..
 pwd
 ```
 
-Output
+Example output:
 
 ```
 /var
@@ -254,14 +262,14 @@ Output
 
 ---
 
-## Go up two levels
+## Move Up Two Levels
 
 ```bash
 cd ../..
 pwd
 ```
 
-Output
+Example output:
 
 ```
 /
@@ -269,7 +277,7 @@ Output
 
 ---
 
-## Go to previous directory
+## Go to Previous Directory
 
 ```bash
 cd /etc
@@ -277,7 +285,7 @@ cd /var/log
 cd -
 ```
 
-Output
+Example output:
 
 ```
 /etc
@@ -285,7 +293,7 @@ Output
 
 ---
 
-## Relative path examples
+## Relative Path Examples
 
 ```bash
 cd ~/Documents
@@ -295,9 +303,11 @@ cd ../Downloads
 
 ---
 
-# stat Command
+# 🔍 `stat` Command
 
-Display detailed file or directory information.
+The `stat` command displays **detailed information about files or directories**.
+
+---
 
 ## Basic Example
 
@@ -305,7 +315,7 @@ Display detailed file or directory information.
 stat file.txt
 ```
 
-Example Output
+Example output:
 
 ```
 File: file.txt
@@ -322,15 +332,15 @@ Gid: (1000/raman)
 
 ---
 
-# Custom stat Format Examples
+# ⚙ Custom `stat` Format Examples
 
-## Show file size
+## Show File Size
 
 ```bash
 stat -c "%n : %s bytes" file.txt
 ```
 
-Output
+Example output:
 
 ```
 file.txt : 1024 bytes
@@ -338,13 +348,13 @@ file.txt : 1024 bytes
 
 ---
 
-## Show owner and group
+## Show Owner and Group
 
 ```bash
 stat -c "Owner: %U, Group: %G" file.txt
 ```
 
-Output
+Example output:
 
 ```
 Owner: raman, Group: raman
@@ -352,13 +362,13 @@ Owner: raman, Group: raman
 
 ---
 
-## Show permissions
+## Show Permissions
 
 ```bash
 stat -c "Permissions: %a (%A)" file.txt
 ```
 
-Output
+Example output:
 
 ```
 Permissions: 644 (-rw-r--r--)
@@ -366,13 +376,13 @@ Permissions: 644 (-rw-r--r--)
 
 ---
 
-# stat for Directory
+# 📂 stat for a Directory
 
 ```bash
 stat /home/raman
 ```
 
-Example Output
+Example output:
 
 ```
 File: /home/raman
@@ -382,3 +392,14 @@ IO Block: 4096 directory
 ```
 
 ---
+
+# 🚀 Summary
+
+In **Day 3**, you learned how to:
+
+* Create directories using `mkdir`
+* Remove empty directories using `rmdir`
+* Navigate directories using `cd`
+* Inspect files and directories using `stat`
+
+These commands are **fundamental for Linux administration, DevOps workflows, and system troubleshooting**.
