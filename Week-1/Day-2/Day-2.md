@@ -1,16 +1,18 @@
-# Day 2: Linux File System Structure
+# 🐧 Day 2: Linux File System Structure
 
-## Understanding the Linux Directory Hierarchy
+## 📂 Understanding the Linux Directory Hierarchy
 
 ---
 
-# Theory
+# 📘 Theory
 
 ## Linux File System Hierarchy
 
-Everything in Linux is a file — even **devices and processes**.
+In Linux, **everything is treated as a file** — including devices, processes, and system information.
 
-The Linux file system starts from the **root directory `/`**.
+The Linux filesystem begins at the **root directory `/`**, which is the top-level directory of the entire system.
+
+### Directory Tree
 
 ```
 /
@@ -28,81 +30,87 @@ The Linux file system starts from the **root directory `/`**.
 
 ---
 
-# Important Directories
+# 📁 Important Directories
 
-| Directory | Purpose |
-|---|---|
-| `/` | Root directory – top of file system |
-| `/home` | User home directories |
-| `/etc` | System configuration files |
-| `/var` | Variable data (logs, mail, databases) |
-| `/bin` | Essential user binaries (`ls`, `cp`, `mv`) |
-| `/sbin` | System binaries (administration commands) |
-| `/usr` | User programs and application data |
-| `/tmp` | Temporary files (cleared on reboot) |
-| `/opt` | Optional or third-party software |
-| `/dev` | Device files |
-| `/proc` | Process information (virtual filesystem) |
-| `/root` | Root user home directory |
+| Directory | Purpose                                     |
+| --------- | ------------------------------------------- |
+| `/`       | Root directory – top of the filesystem      |
+| `/home`   | User home directories                       |
+| `/etc`    | System configuration files                  |
+| `/var`    | Variable data such as logs, mail, databases |
+| `/bin`    | Essential user commands (`ls`, `cp`, `mv`)  |
+| `/sbin`   | System administration commands              |
+| `/usr`    | User applications and utilities             |
+| `/tmp`    | Temporary files (often cleared on reboot)   |
+| `/opt`    | Optional or third-party software            |
+| `/dev`    | Device files                                |
+| `/proc`   | Virtual filesystem containing process info  |
+| `/root`   | Root user's home directory                  |
 
 ---
 
-# Absolute vs Relative Paths
+# 📍 Absolute vs Relative Paths
 
-### Absolute Path
-Starts from the root `/`
+## Absolute Path
 
-Example
+An **absolute path** starts from the root directory `/`.
+
+Example:
 
 ```
 /home/raman/documents
 ```
 
-### Relative Path
-Starts from the **current directory**
+---
 
-Examples
+## Relative Path
+
+A **relative path** starts from the **current working directory**.
+
+Examples:
 
 ```
 ./documents
 ../other
 ```
 
-### Special Symbols
+---
 
-| Symbol | Meaning |
-|---|---|
-| `.` | Current directory |
-| `..` | Parent directory |
-| `~` | Home directory |
+## Special Path Symbols
+
+| Symbol | Meaning           |
+| ------ | ----------------- |
+| `.`    | Current directory |
+| `..`   | Parent directory  |
+| `~`    | Home directory    |
 
 ---
 
-# Command
+# 💻 Command: `ls`
 
-## ls — List Directory Contents
-
----
-
-# ls Flags
-
-| Flag | Description |
-|---|---|
-| `-l` | Long format (permissions, owner, size, date) |
-| `-a` | Show hidden files |
-| `-h` | Human readable sizes |
-| `-R` | Recursive listing |
-| `-t` | Sort by time |
-| `-r` | Reverse order |
-| `-S` | Sort by size |
-| `-i` | Show inode numbers |
-| `-d` | Show directory itself |
-| `-1` | One file per line |
-| `--color` | Colorized output |
+The `ls` command is used to **list directory contents**.
 
 ---
 
-# Workouts
+# ⚙️ `ls` Command Flags
+
+| Flag      | Description                                          |
+| --------- | ---------------------------------------------------- |
+| `-l`      | Long listing format (permissions, owner, size, date) |
+| `-a`      | Show hidden files                                    |
+| `-h`      | Human-readable file sizes                            |
+| `-R`      | Recursive listing                                    |
+| `-t`      | Sort by modification time                            |
+| `-r`      | Reverse sorting order                                |
+| `-S`      | Sort by file size                                    |
+| `-i`      | Show inode numbers                                   |
+| `-d`      | Show directory itself instead of contents            |
+| `-1`      | Display one file per line                            |
+| `--color` | Colorized output                                     |
+
+---
+
+# 🏋️ Workouts
 
 ## Basic Listing
 
@@ -110,7 +118,7 @@ Examples
 ls
 ```
 
-Example output
+Example output:
 
 ```
 Desktop  Documents  Downloads  Music  Pictures
@@ -124,7 +132,7 @@ Desktop  Documents  Downloads  Music  Pictures
 ls -l
 ```
 
-Example
+Example output:
 
 ```
 drwxr-xr-x 2 raman raman 4096 Jan 15 10:00 Desktop
@@ -140,7 +148,7 @@ drwxr-xr-x 3 raman raman 4096 Jan 14 09:30 Documents
 ls -la
 ```
 
-Example
+Example output:
 
 ```
 total 32
@@ -153,13 +161,13 @@ drwxr-xr-x 2 raman raman 4096 Jan 15 10:00 Desktop
 
 ---
 
-## Human Readable File Sizes
+## Human-Readable File Sizes
 
 ```bash
 ls -lh
 ```
 
-Example
+Example output:
 
 ```
 -rw-r--r-- 1 raman raman 1.5M Jan 15 10:00 large_file.txt
@@ -174,6 +182,8 @@ Example
 ls -lt
 ```
 
+Lists files ordered by **latest modified time**.
+
 ---
 
 ## Sort by File Size
@@ -181,6 +191,8 @@ ls -lt
 ```bash
 ls -lS
 ```
+
+Lists files ordered by **largest size first**.
 
 ---
 
@@ -190,15 +202,17 @@ ls -lS
 ls -R
 ```
 
-Lists all files and subdirectories.
+Lists **all files and subdirectories recursively**.
 
 ---
 
-## List Files in Specific Directory
+## List Files in a Specific Directory
 
 ```bash
 ls -la /etc
 ```
+
+Useful for exploring **system configuration files**.
 
 ---
 
@@ -208,10 +222,22 @@ ls -la /etc
 ls -ld /home
 ```
 
-Example
+Example output:
 
 ```
 drwxr-xr-x 3 root root 4096 Jan 10 08:00 /home
 ```
 
 ---
+
+# 🚀 Summary
+
+In **Day 2**, you learned:
+
+* The **Linux filesystem hierarchy**
+* Important system directories
+* **Absolute vs relative paths**
+* Special path symbols (`.`, `..`, `~`)
+* Advanced usage of the **`ls` command**
+
+These concepts are fundamental for **Linux administration, DevOps, and cloud engineering**.
