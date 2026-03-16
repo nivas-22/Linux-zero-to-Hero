@@ -121,8 +121,8 @@ ls -l
 Example output:
 
 ```
-drwxr-xr-x 2 raman raman 4096 Jan 15 10:00 public_folder
-drwx------ 2 raman raman 4096 Jan 15 10:00 private_folder
+drwxr-xr-x 2 nivas nivas 4096 Jan 15 10:00 public_folder
+drwx------ 2 nivas nivas 4096 Jan 15 10:00 private_folder
 ```
 
 ---
@@ -212,7 +212,7 @@ pwd
 Example output:
 
 ```
-/home/raman
+/home/nivas
 ```
 
 ---
@@ -227,7 +227,7 @@ pwd
 Example output:
 
 ```
-/home/raman
+/home/nivas
 ```
 
 ---
@@ -326,8 +326,8 @@ Device: 801h
 Inode: 1234567
 Links: 1
 Access: (0644/-rw-r--r--)
-Uid: (1000/raman)
-Gid: (1000/raman)
+Uid: (1000/nivas)
+Gid: (1000/nivas)
 ```
 
 ---
@@ -357,7 +357,7 @@ stat -c "Owner: %U, Group: %G" file.txt
 Example output:
 
 ```
-Owner: raman, Group: raman
+Owner: nivas, Group: nivas
 ```
 
 ---
@@ -379,13 +379,13 @@ Permissions: 644 (-rw-r--r--)
 # 📂 stat for a Directory
 
 ```bash
-stat /home/raman
+stat /home/nivas
 ```
 
 Example output:
 
 ```
-File: /home/raman
+File: /home/nivas
 Size: 4096
 Blocks: 8
 IO Block: 4096 directory
