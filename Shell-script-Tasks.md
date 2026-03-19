@@ -1,6 +1,6 @@
-## 1. Show System Info
+# 1. Show System Info
 
-# Concept: system commands
+## Concept: system commands
 
 ```bash
 #!/bin/bash
@@ -12,8 +12,8 @@ echo "Current Directory: $(pwd)"
 
 ---
 
-## 2. Hello + User Input Script
-# Concept: variables, input, echo
+# 2. Hello + User Input Script
+## Concept: variables, input, echo
 
 ```copy
 #!/bin/bash
@@ -21,13 +21,13 @@ echo "Current Directory: $(pwd)"
 echo "Enter your name:"
 read name
 
-echo "Hello, $name! Welcome to Linux scripting."
+echo "Hello, $name! Welcome to Learn with Nivas Youtube channel."
 ```
 ---
 
-## 3. Simple Calculator
+# 3. Simple Calculator
 
-# Concept: arithmetic
+## Concept: arithmetic
 
 ```bash
 #!/bin/bash
@@ -44,9 +44,9 @@ echo "Sum: $sum"
 ```
 ---
 
-## 4. Count Files in a Directory
+# 4. Count Files in a Directory
 
-# Concept: command substitution
+## Concept: command substitution
 
 ```bash
 #!/bin/bash
@@ -60,7 +60,7 @@ echo "Number of files: $count"
 ```
 ---
 
-## 5. Website Status Checker
+# 5. Website Status Checker
 📌 Idea:
 
 Check if a website is up
@@ -81,7 +81,7 @@ fi
 ```
 ---
 
-## 6. System Health Report
+# 6. System Health Report
 
 ```bash
 #!/bin/bash
@@ -96,7 +96,7 @@ df -h
 ```
 ---
 
-## 7. Simple User Manager
+# 7. Simple User Manager
 📌 Idea:
 
 Create and delete Linux users
