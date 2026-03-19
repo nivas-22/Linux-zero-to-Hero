@@ -33,10 +33,10 @@ When a new file is created:
 ## 🧠 Understanding the Output
 
 ```
--rw-r--r-- 1 raman developers 1024 Jan 15 10:00 file.txt
+-rw-r--r-- 1 nivas developers 1024 Jan 15 10:00 file.txt
                 |       |
                 |       +--> 👥 Group Owner (developers)
-                +----------> 👤 User Owner (raman)
+                +----------> 👤 User Owner (nivas)
 ```
 
 ## Examples
@@ -46,7 +46,7 @@ When a new file is created:
 $ sudo chown john file . txt
 
 $ ls -l file . txt
--rw -r --r -- 1 john raman 1024 Jan 15 10:00 file . txt
+-rw -r --r -- 1 john nivas 1024 Jan 15 10:00 file . txt
 
 # Change owner and group
 $ sudo chown john : developers file . txt
@@ -56,14 +56,14 @@ $ ls -l file . txt
 # Change group only ( note the colon )
 $ sudo chown : developers file . txt
 $ ls -l file . txt
--rw -r --r -- 1 raman developers 1024 Jan 15 10:00 file . txt
+-rw -r --r -- 1 nivas developers 1024 Jan 15 10:00 file . txt
 
 # Recursive change for directory
 $ sudo chown -R www - data : www - data / var / www / html /
 
 # Verbose output
 $ sudo chown -v john : staff file . txt
-changed ownership of ’ file . txt ’ from raman : raman to john : staff
+changed ownership of ’ file . txt ’ from nivas : nivas to john : staff
 
 # Use reference file
 $ sudo chown -- reference = file1 . txt file2 . txt
@@ -72,7 +72,7 @@ $ sudo chown -- reference = file1 . txt file2 . txt
 $ sudo chown john : developers *. txt
 
 # Change only if current owner matches
-$ sudo chown -- from = raman john file . txt
+$ sudo chown -- from = nivas john file . txt
 
 ```
 ---
