@@ -230,3 +230,13 @@ Gateway
 DNS resolution
 
 ---
+## Pro TIP
+
+Network Troubleshooting Steps:
+1. ping 127.0.0.1 - Test loopback (TCP/IP stack working?)
+2. ping YOUR_IP - Test local interface
+3. ping GATEWAY_IP - Test connection to router
+4. ping 8.8.8.8 - Test internet connectivity (Google DNS)
+5. ping google.com - Test DNS resolution
+If step 4 works but step 5 fails = DNS problem!
+Check /etc/resolv.conf for DNS servers.
